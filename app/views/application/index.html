@@ -1,7 +1,15 @@
 <div id="content">
   <div id="input">
+    <ul id="tabs">
+      <li class="tab selected" tab_link="0">Draw</li>
+      <span style="padding: 0 0 0 10px">Mouse Events:</span>
+      <li class="tab" tab_link="1">Down</li>
+      <li class="tab" tab_link="2">Up</li>
+      <li class="tab" tab_link="3">Move</li>
+      <li class="tab" tab_link="4">Leave</li>
+    </ul>
     <div id="input_text"></div>
-    <div id="submit" class="button">Draw</div>
+    <div id="submit" class="button">Update</div>
     <div id="new" class="button">New</div>
     <div id="load" class="button">Load</div>
     <div id="save" class="button">Save</div>
@@ -13,8 +21,8 @@
     </div>
   </div>
 </div>
-<script type="text/javascript" id="writeable">//don't mess with this
-var draw = function(){
+<script type="text/javascript" id="drawFunc">//don't mess with this
+draw = function(){
   console.log("Drawing");
   //always need to clear draing space
   //everything drawn in order of calling
@@ -79,3 +87,15 @@ var draw = function(){
   ctx.fillStyle = "rgb(2000,100,100)";
   ctx.fillRect(0,0,20,20);
 }</script>
+<script id="downFunc">mouseDown = function(){
+	console.log("Mouse down");
+};</script>
+<script id="upFunc">mouseUp = function(){
+	console.log("Mouse up");
+};</script>
+<script id="moveFunc">mouseMove = function(){
+	console.log("Mouse move");
+};</script>
+<script id="leaveFunc">mouseLeave = function(){
+	console.log("Mouse leave");
+};</script>
