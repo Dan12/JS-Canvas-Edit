@@ -1,0 +1,50 @@
+*{
+  font-family: arial;
+}
+
+body{
+  background-color: rgb(240,240,240);
+  margin: 10px 4px;
+}
+
+#test_canvas{
+  background-color: rgb(255,255,255);
+}
+
+.CodeMirror{
+  width: 40%;
+  height: 400px;
+  border: 1px solid lightgray;
+}
+
+#input{
+ margin-left: 5%; 
+}
+
+#output{
+  position: absolute;
+  top: 10px;
+  left: 47%;
+}
+
+.button{
+  padding: 8px 4px;
+  border: 1px solid darkgray;
+  background-color: lightgray;
+  display: inline-block;
+  border-radius: 4px;
+  margin: 8px 3% 0 0;
+  cursor: pointer;
+}
+
+#message_area{
+  max-height: 140px;
+  overflow: scroll;
+  border: solid 1px lightgray;
+  width: 400px;
+}
+
+.message{
+  margin: 2px 4px;
+  padding: 0;
+}

@@ -1,0 +1,81 @@
+<div id="content">
+  <div id="input">
+    <div id="input_text"></div>
+    <div id="submit" class="button">Draw</div>
+    <div id="new" class="button">New</div>
+    <div id="load" class="button">Load</div>
+    <div id="save" class="button">Save</div>
+  </div>
+  <div id="output">
+    <canvas id="test_canvas" width="400" height="400" style="border: 1px solid gray;"></canvas>
+    <div id="message_area">
+      <p class="message">Console:</p>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" id="writeable">//don't mess with this
+var draw = function(){
+  console.log("Drawing");
+  //always need to clear draing space
+  //everything drawn in order of calling
+  ctx.clearRect(0,0,canvasWidth,canvasHeight);
+  //set fill color
+  ctx.fillStyle = "red";
+  //draw rect(left x, top y, right x, bottom y)
+  ctx.fillRect(50,50,100,100);
+  //set fill color with rgb
+  ctx.fillStyle = "rgb(100,100,100)";
+  //set font (size font-family)
+  ctx.font = "30px Arial";
+  //Draw text (text, left x, bottom y)
+  ctx.fillText("Hello There", 60, 80);
+  //set fill color with rgba (alpha from 0-1)
+  ctx.fillStyle = "rgba(0,0,255,0.5)"
+  ctx.fillRect(70,70,180,180);
+  //set stroke color
+  ctx.strokeStyle = "green";
+  //draw a line from 200,200 to 200,300
+  ctx.beginPath();
+  ctx.lineWidth = 1;
+  ctx.moveTo(200,200);
+  ctx.lineTo(200,300);
+  ctx.stroke();
+  //drawing a new line with a width of 5
+  ctx.beginPath();
+  ctx.moveTo(200,300);
+  ctx.lineTo(300,300);
+  ctx.lineWidth = 5;
+  ctx.stroke();
+  //drawing an arc with center: 300,300 radius: 80 angle: 0-3 radians counter-clockwise: false
+  ctx.beginPath();
+  ctx.lineWidth = 2;
+  ctx.arc(300,300,80,0,3,false);
+  ctx.stroke();
+  //bezier curve defined by the points (50,300) (80,250) (50,390)
+  ctx.beginPath();
+  ctx.lineWidth = 3;
+  ctx.bezierCurveTo(50,300,80,250,50,390);
+  ctx.stroke();
+  //ellipse with center: 100,350 radii: 35,25 rotation: 2 radians fill-rotation: 0-4 radians counter-clockwise: false
+  ctx.beginPath();
+  ctx.ellipse(100,350,35,25,2,0,4,false);
+  ctx.fill();
+  //circle at 180,350 radius 25
+  ctx.beginPath();
+  ctx.ellipse(180,350,25,25,0,0,2*Math.PI,false);
+  ctx.fill();
+  //saving canvas state
+  ctx.save();
+  //translating canvas drawing starting point
+  ctx.translate(100,100);
+  ctx.fillStyle = "rgb(100,200,100)";
+  ctx.fillRect(0,0,20,20);
+  //rotate canvas .5 radians
+  ctx.rotate(0.5);
+  ctx.fillStyle = "yellow";
+  ctx.fillRect(0, 50, 100, 100);
+  //restore canvas translation/roation from last save
+  ctx.restore();
+  ctx.fillStyle = "rgb(2000,100,100)";
+  ctx.fillRect(0,0,20,20);
+}</script>
